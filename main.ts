@@ -21,6 +21,7 @@ namespace lightsensor {
     export function onBrightnessChange(level: onoff, handler: Action) {
         control.onEvent(3300, level, handler);
         if (init == 0) {
+            init=1
             lastLightLevel = input.lightLevel()
             control.inBackground(() => {
                 while (true) {
