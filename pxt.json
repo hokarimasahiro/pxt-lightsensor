@@ -13,5 +13,6 @@
     "testFiles": [
         "test.ts"
     ],
-    "public": false
+    "public": false,
+    "installedVersion": "workspace:b96de556-1a90-4cac-e35e-ca53006b3e3c"
 }
