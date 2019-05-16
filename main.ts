@@ -3,10 +3,10 @@
  */
 //% weight=100 color=#0fbc11 icon="\u270f" block="light sensor"
 enum onoff {
-    //% block=off
-    off = 0,
     //% block=on
-    on = 1
+    on = 1,
+    //% block=off
+    off = 0
 }
 namespace lightsensor {
     let init = 0
@@ -27,8 +27,12 @@ namespace lightsensor {
                 while (true) {
                     const lightLevel = input.lightLevel()
                     if (lightLevel != lastLightLevel) {
+                        if(lightLevel<lastLightLevel){
+                            control.raiseEvent(3300, onoff.off)
+                        } else {
+                            control.raiseEvent(3300, onoff.on)
+                        }
                         lastLightLevel = lightLevel
-                        control.raiseEvent(3300, lastLightLevel)
                     }
                     basic.pause(50);
                 }
