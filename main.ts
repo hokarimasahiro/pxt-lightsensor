@@ -16,7 +16,7 @@ namespace lightsensor {
      * @param level 数値。, eg: 0
      * @param handler 関数。, eg: action
      */
-    //% blockId="明るさの変化を検出" block="明るさの変化を検出 %level %handler"
+    //% blockId="明るさの変化を検出" block="明るさの変化を検出 %level"
     //% weight=100 blockGap=8
     export function onBrightnessChange(level: onoff, handler: Action) {
         control.onEvent(3300, level, handler);
